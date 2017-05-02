@@ -132,7 +132,7 @@ class CheckCommitSummary(CommitCheck):
         rest_len = len(rest)
         if rest_len > 72:
             yield Severity.ERROR, 'commit summary longer than 72 characters'
-        elif rest_len > 50:
+        elif rest_len > 50 and False:
             yield Severity.WARNING, 'commit summary longer than 50 characters'
 
         if '  ' in rest:
@@ -167,7 +167,7 @@ class CheckCommitSummary(CommitCheck):
         elif first_letter.upper() != first_letter:
             yield Severity.WARNING, 'commit title not capitalized'
 
-        if rest.endswith('.'):
+        if rest.endswith('.') and False:
             yield Severity.WARNING, 'commit title ends with a dot'
 
         first_word = rest.split(' ', 1)[0]
